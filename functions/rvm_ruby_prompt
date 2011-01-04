@@ -1,3 +1,5 @@
 if (declare -f rvm > /dev/null) {
-  rvm-prompt v g s
+  if [[ $(rvm-prompt v g s) != 'system' ]]; then
+    echo "[$(rvm-prompt v g s)]"
+  fi
 }
