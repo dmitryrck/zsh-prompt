@@ -1,0 +1,3 @@
+if (declare -f rvm > /dev/null) {
+  rvm-prompt v g s
+}

@@ -1,0 +1,6 @@
+case "$1" in 
+  git*|gitx*|gb*|gc*|add*|commit*|push*|pull*|vi*|rm*|uncommit*)
+  __EXECUTED_GIT_COMMAND=1
+  ;;
+esac
+

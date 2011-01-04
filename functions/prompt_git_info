@@ -1,0 +1,23 @@
+if [ -n "$__CURRENT_GIT_BRANCH" ]; then
+  local s="["
+
+  s+="$__CURRENT_GIT_BRANCH"
+
+  if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
+    s+="⚡"
+  fi
+
+  case "$__CURRENT_GIT_BRANCH_STATUS" in
+    ahead)
+    s+="↑${__CURRENT_GIT_BRANCH_AHEAD}"
+    ;;
+    diverged)
+    s+="↕"
+    ;;
+    behind)
+    s+="↓"
+    ;;
+  esac
+  s+="]"
+  echo ${s}
+fi
