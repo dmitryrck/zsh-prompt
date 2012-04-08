@@ -21,3 +21,7 @@ Append to zsh config file:
     PROMPT=$'%1d$(prompt_git_info)%# '
     RPROMPT='$(rvm_ruby_prompt)'
 
+# Important Note
+
+I replaced this with a oh-my-zsh theme
+[dmitrynix.zsh-theme](https://github.com/dmitrynix/zsh-prompt/blob/master/dmitrynix.zsh-theme).
