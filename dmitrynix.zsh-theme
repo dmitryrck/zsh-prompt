@@ -78,7 +78,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 # ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg[cyan]%}"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 
-PROMPT=$'%M %1c$(prompt_git_info) %# '
+PROMPT=$'%n@%M %1c$(prompt_git_info)%# '
 RPS1=$RUBY_PROMPT_
 
 # ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}%{$fg[yellow]%}⚡%{$reset_color%}"
