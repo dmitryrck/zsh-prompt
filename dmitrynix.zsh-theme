@@ -38,7 +38,7 @@ function prompt_git_info() {
     s+="$__CURRENT_GIT_BRANCH"
 
     if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
-      s+="%{$fg[red]%}⚡%{$reset_color%}"
+      s+="⚡"
     fi
 
     case "$__CURRENT_GIT_BRANCH_STATUS" in
