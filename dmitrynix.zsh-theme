@@ -38,15 +38,17 @@ function prompt_git_info() {
     s+="$__CURRENT_GIT_BRANCH"
 
     if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
-      s+="⚡"
+      s+="${ZSH_THEME_GIT_PROMPT_DIRTY}"
     fi
 
     case "$__CURRENT_GIT_BRANCH_STATUS" in
-      ahead) s+="↑${__CURRENT_GIT_BRANCH_AHEAD}" ;;
-      diverged) s+="↕" ;;
-      behind) s+="↓" ;;
+      ahead) s+="${ZSH_THEME_GIT_AHEAD}${__CURRENT_GIT_BRANCH_AHEAD}" ;;
+      diverged) s+="${ZSH_THEME_GIT_DIVERGED}" ;;
+      behind) s+="${ZSH_THEME_BEHIND}" ;;
     esac
+
     s+="${ZSH_THEME_GIT_PROMPT_SUFFIX}"
+
     echo ${s}
   fi
 }
@@ -75,16 +77,10 @@ fi
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 
-# ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg[cyan]%}"
-# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
-
 PROMPT=$'%n@%M %1c$(prompt_git_info)%# '
 RPS1=$RUBY_PROMPT_
 
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}%{$fg[yellow]%}⚡%{$reset_color%}"
-# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}"
-# ZSH_THEME_GIT_PROMPT_ADDED="+"
-# ZSH_THEME_GIT_PROMPT_MODIFIED="*"
-# ZSH_THEME_GIT_PROMPT_RENAMED="~"
-# ZSH_THEME_GIT_PROMPT_DELETED="!"
-# ZSH_THEME_GIT_PROMPT_UNMERGED="?"
+ZSH_THEME_GIT_PROMPT_DIRTY="⚡"
+ZSH_THEME_GIT_AHEAD="↑"
+ZSH_THEME_GIT_DIVERGED="↕"
+ZSH_THEME_BEHIND="↓"
