@@ -77,7 +77,8 @@ fi
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 
-PROMPT=$'%n@%M %1c$(prompt_git_info)%# '
+#PROMPT=$'%n@%M %1c$(prompt_git_info)%# '
+PROMPT=$'%M %1c$(prompt_git_info)%# '
 RPS1=$RUBY_PROMPT_
 
 ZSH_THEME_GIT_PROMPT_DIRTY="⚡"
